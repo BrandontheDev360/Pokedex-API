@@ -19,7 +19,7 @@ const App = () => {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
         const data =  await res.json()
         setAllPokemons( pokeList => [...pokeList, data])
-        await allPokemons.sort((a, b) => a.id > b.id ? 1 : -1)
+        await allPokemons.sort((a, b) => a.id - b.id)
       })
     }
     createPokemonObject(data.results)
